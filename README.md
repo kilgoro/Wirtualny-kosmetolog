@@ -114,8 +114,8 @@ Copyright © 2024 Patryk Łyjak. Wszelkie prawa zastrzeżone.
 
 Kod źródłowy jest widoczny, ale **nie jest oprogramowaniem open source**. Przeglądanie kodu nie nadaje żadnych praw do jego używania, kopiowania, modyfikowania ani dystrybucji bez pisemnej zgody autora.
 
-The user just wants the README text translated to English — they're not asking for a file. The document already contains an English version at the bottom. I'll provide a clean, complete English-only README.
-Here's the full README rewritten in English:
+
+// English // 
 
 Virtual Beautician 💆‍♀️
 A WordPress plugin — an interactive cosmetology quiz with personalized treatment recommendations. Perfect for beauty salons, aesthetic clinics, and skincare studios.
