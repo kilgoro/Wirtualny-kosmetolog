@@ -114,13 +114,10 @@ Copyright © 2024 Patryk Łyjak. Wszelkie prawa zastrzeżone.
 
 Kod źródłowy jest widoczny, ale **nie jest oprogramowaniem open source**. Przeglądanie kodu nie nadaje żadnych praw do jego używania, kopiowania, modyfikowania ani dystrybucji bez pisemnej zgody autora.
 
-
-// English // 
-
 Virtual Beautician 💆‍♀️
 A WordPress plugin — an interactive cosmetology quiz with personalized treatment recommendations. Perfect for beauty salons, aesthetic clinics, and skincare studios.
-Features
 
+Features
 5-Step Quiz – guides the client through body part selection, specific concerns, and preferred treatment methods
 4-Tab Admin Panel – manage Paths, Welcome Screen, Photos, and Settings
 Automatic Photo Matching – matches images to treatments by filename (supports inflectional variants) or via manual override
@@ -130,44 +127,42 @@ CF7 / Elementor Integration – embed a consultation form at the end of the quiz
 Splide Slider – a smooth, responsive carousel on the results screen
 Accessibility (a11y) – built-in ARIA labels and roles for screen-reader compatibility
 Security First – CSRF nonces on all admin forms and full input sanitization
-
 Requirements
-
 WordPress 5.8+
 PHP 7.4+
 (Optional) Contact Form 7 or any shortcode-based form builder
-
 Installation
-
 Download the repository or ZIP package.
 Upload the virtual-beautician folder to /wp-content/plugins/.
 Activate the plugin in WordPress Dashboard → Plugins.
 Images from the /treatments/ folder will be automatically imported into your Media Library.
 Navigate to the Virtual Beautician menu and configure your paths, colors, and form settings.
 Place the shortcode on any page:
-
 [virtual_beautician_quiz]
 Configuration
 Paths (Tab: "Paths")
 Define your logic tree: Body Part → Concerns → Treatments.
 Each concern can be linked to multiple treatments using a Select2 multi-select field.
-Photos (Tab: "Photos")
 
+Photos (Tab: "Photos")
 Automatic – the system matches images to treatments based on the filename (handles linguistic variants, e.g. body / bodies).
 Manual – directly assign a specific Media Library image to a treatment.
-
 Settings (Tab: "Settings")
-OptionDescriptionTreatment SourcePost type to pull from (default: page)Parent CategoryFilter sub-pages by a specific parent pageForm ShortcodePaste your CF7, Elementor, or WPForms shortcode hereSummary FieldThe field name/ID where quiz results should be injectedColorsPrimary, gradient, accent, and button stylingMethods (Step 4)Configurable list – one line per option
+Option	Description
+Treatment Source	Post type to pull from (default: page)
+Parent Category	Filter sub-pages by a specific parent page
+Form Shortcode	Paste your CF7, Elementor, or WPForms shortcode here
+Summary Field	The field name/ID where quiz results should be injected
+Colors	Primary, gradient, accent, and button styling
+Methods (Step 4)	Configurable list – one line per option
 Parent Filter Keywords
 Enter keywords (one per line) to narrow the list of parent pages shown in settings. Leave blank to show all.
-Shortcode
-php[virtual_beautician_quiz]
-```
 
+Shortcode
+[virtual_beautician_quiz]
 No attributes — everything is configured from the admin panel.
 
-## File Structure
-```
+File Structure
 virtual-beautician/
 ├── virtual-beautician.php        # Main plugin file
 ├── inc/
@@ -184,17 +179,20 @@ virtual-beautician/
     ├── cryolipolysis.webp
     └── ...
 External Dependencies (CDN)
-LibraryVersionUsageSplide4.1.4Recommendation sliderSelect24.1.0-rc.0Multi-select in the admin panel
+Library	Version	Usage
+Splide	4.1.4	Recommendation slider
+Select2	4.1.0-rc.0	Multi-select in the admin panel
 Both are enqueued conditionally — only on pages where they're needed.
-Security
 
+Security
 Every admin form is protected by nonces (wp_nonce_field / check_admin_referer)
 Input data is sanitized via sanitize_text_field, wp_kses_post, intval, and sanitize_hex_color
 AJAX handlers are protected by check_ajax_referer and current_user_can('manage_options') capability checks
 Scripts and styles are loaded only on pages containing the shortcode
-
 Author
 Patryk Łyjak
+
 License
 Copyright © 2024 Patryk Łyjak. All rights reserved.
+
 The source code is visible for inspection but is not open-source software. Viewing the code does not grant any rights to use, copy, modify, or distribute it without the express written consent of the author.
